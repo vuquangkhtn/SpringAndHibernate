@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 4, 2017 8:03:45 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.pojo.Quanly" table="quanly" catalog="qlsanpham" optimistic-lock="version">
+        <id name="idquanly" type="java.lang.Integer">
+            <column name="idquanly" />
+            <generator class="identity" />
+        </id>
+        <property name="hoten" type="string">
+            <column name="hoten" length="100" />
+        </property>
+        <property name="tendangnhap" type="string">
+            <column name="tendangnhap" length="45" not-null="true" unique="true" />
+        </property>
+        <property name="matkhau" type="string">
+            <column name="matkhau" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

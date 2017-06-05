@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/src/java/controller/ProductServlet.java</file>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/web/WEB-INF/jsp/index.jsp</file>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/src/java/controller/SanPhamController.java</file>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/web/WEB-INF/jsp/themsanpham.jsp</file>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/web/WEB-INF/jsp/sanphams.jsp</file>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/src/java/model/pojo/Sanpham.java</file>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/web/WEB-INF/applicationContext.xml</file>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/src/java/controller/SuaSanPhamController.java</file>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/web/WEB-INF/jsp/suasanpham.jsp</file>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/web/WEB-INF/web.xml</file>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/src/java/controller/ThemSanPhamController.java</file>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/src/java/model/dao/SanphamDAO.java</file>
+            <file>file:/D:/code/IsComing/SpringAndHibernate/web/redirect.jsp</file>
+        </group>
+    </open-files>
+</project-private>

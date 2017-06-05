@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 4, 2017 8:03:45 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.pojo.Sanpham" table="sanpham" catalog="qlsanpham" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="tenSp" type="string">
+            <column name="TenSP" length="100" not-null="true" />
+        </property>
+        <property name="mieuTa" type="string">
+            <column name="MieuTa" length="100" />
+        </property>
+        <property name="gia" type="big_decimal">
+            <column name="Gia" precision="12" />
+        </property>
+        <property name="soLuong" type="java.lang.Integer">
+            <column name="SoLuong" />
+        </property>
+    </class>
+</hibernate-mapping>
