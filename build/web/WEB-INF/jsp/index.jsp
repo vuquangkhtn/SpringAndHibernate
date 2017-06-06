@@ -11,5 +11,6 @@
     <body>
         <h1>LOGIN</h1>
         <button onclick="window.location.href='products.htm'" style=" margin-right: 2%">Login</button>
+        <button onclick="window.location.href='viewPerInfo.htm'" style=" margin-right: 2%">Login</button>
     </body>
 </html>

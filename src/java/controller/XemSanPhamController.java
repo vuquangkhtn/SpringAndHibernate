@@ -13,15 +13,14 @@ import model.pojo.Sanpham;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
-
 /**
  *
  * @author VuQuang
  */
-public class SanPhamController implements Controller{
+public class XemSanPhamController implements Controller{
 
     public ModelAndView handleRequest(HttpServletRequest hsr, HttpServletResponse hsr1){
-        ModelAndView mv = new ModelAndView("sanphams");
+        ModelAndView mv = new ModelAndView("nv_sanphams");
         try {
             List<Sanpham> list = new SanphamDAO().layDSSanpham();
             mv.addObject("products",list);

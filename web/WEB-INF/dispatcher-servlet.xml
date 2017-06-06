@@ -13,6 +13,8 @@
     <bean class="controller.SanPhamController" id="sanPhamController"/>
     <bean class="controller.ThemSanPhamController" id="themSanPhamController"/>
     <bean class="controller.SuaSanPhamController" id="suaSanPhamController"/>
+    <bean class="controller.XemSanPhamController" id="nv_XemSanPhamController"/>
+    <bean class="controller.NhanVienController" id="nv_XemThongTinController"/>
 
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
@@ -26,6 +28,8 @@
                 <prop key="products.htm">sanPhamController</prop>
                 <prop key="addProduct.htm">themSanPhamController</prop>
                 <prop key="editProduct.htm">suaSanPhamController</prop>
+                <prop key="viewPerInfo.htm">nv_XemThongTinController</prop>
+                <prop key="viewProducts.htm">nv_XemSanPhamController</prop>
             </props>
         </property>
     </bean>

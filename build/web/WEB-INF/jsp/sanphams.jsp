@@ -41,6 +41,7 @@
             <input type="submit" name="btnXoa" value="Xoa" />
         </form>
         </div>
+        <button onclick="window.location.href='index.htm'">Logout</button>
         
     </body>
 </html>
