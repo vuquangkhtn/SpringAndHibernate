@@ -34,23 +34,28 @@ public class ProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        SanphamDAO sanpham = new SanphamDAO();
-        String listIDCheckbox[] = request.getParameterValues("checkboxXoa");
-        
-        if (request.getParameter("btnXoa") != null) {
-            if(listIDCheckbox.length > 0) {
-                for(String id:listIDCheckbox) {
-                    if(id != null) {
-                        sanpham.xoaSanpham(Integer.valueOf(id));
+        try {
+                SanphamDAO sanpham = new SanphamDAO();
+                String listIDCheckbox[] = request.getParameterValues("checkboxXoa");
+                if(listIDCheckbox == null) {
+                    request.getRequestDispatcher("products.htm").forward(request, response);
+                    return;
+                }
+                if (request.getParameter("btnXoa") != null) {
+                    if(listIDCheckbox.length > 0) {
+                        for(String id:listIDCheckbox) {
+                            if(id != null) {
+                                sanpham.xoaSanpham(Integer.valueOf(id));
+                            }
+                        }
                     }
                 }
-            }
-        } else if (request.getParameter("btnSua") != null) {
-            
-        } else {
-            // ???
+                request.getRequestDispatcher("products.htm").forward(request, response);
         }
-        request.getRequestDispatcher("products.htm").forward(request, response);
+        catch(Exception e) {
+            e.printStackTrace();
+            return;
+        }
     }
 
     /**

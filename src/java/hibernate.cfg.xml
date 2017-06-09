@@ -47,7 +47,6 @@ Contributor(s):
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password"/>
     <mapping resource="model/pojo/Nhanvien.hbm.xml"/>
-    <mapping resource="model/pojo/Quanly.hbm.xml"/>
     <mapping resource="model/pojo/Sanpham.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

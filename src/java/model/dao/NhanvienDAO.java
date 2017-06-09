@@ -6,7 +6,7 @@
 package model.dao;
 
 import java.util.ArrayList;
-import model.pojo.Nhanvien;
+import java.util.List;
 import model.pojo.Nhanvien;
 import model.util.HibernateUtil;
 import org.hibernate.HibernateException;
@@ -19,10 +19,10 @@ import org.hibernate.Transaction;
  * @author VuQuang
  */
 public class NhanvienDAO {
+
     public ArrayList<Nhanvien> layDSNhanvien() {
         ArrayList<Nhanvien> listNV = new ArrayList<>();
-        Session session = HibernateUtil.getSessionFactory()
-        .openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             String sql="FROM Nhanvien";
             Query query = session.createQuery(sql);
@@ -36,17 +36,16 @@ public class NhanvienDAO {
     }
     
     public Nhanvien layThongTinNhanvien(int id) {
-        Nhanvien Nhanvien = null;
-        Session session = HibernateUtil.getSessionFactory()
-        .openSession();
+        Nhanvien nhanvien = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            Nhanvien = (Nhanvien)session.get(Nhanvien. class, id);
+            nhanvien = (Nhanvien)session.get(Nhanvien.class, id);
         } catch (HibernateException ex) {
             System.err.println(ex);
         } finally {
             session.close();
         }
-        return Nhanvien;
+        return nhanvien;
     }
     
     public boolean themNhanvien(Nhanvien Nhanvien) {
@@ -108,5 +107,46 @@ public class NhanvienDAO {
             session.close();
         }
         return true;
+    }
+    
+    public Nhanvien layThongTinNhanvien(String tendn, String matkhau) {
+        Nhanvien nv = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        
+        try {
+            String sql="FROM Nhanvien WHERE tendn = :tendn AND matkhau = :matkhau";
+            Query query = session.createQuery(sql);
+            query.setParameter("tendn" ,tendn);
+            query.setParameter("matkhau" ,matkhau);
+            List<Nhanvien> ds = query.list();
+            if(!ds.isEmpty())
+                nv=ds.get(0);
+        } catch (HibernateException ex) {
+            System.err.println(ex);
+            nv = null;
+        } finally {
+            session.close();
+        }
+        return nv;
+    }
+    
+    public Nhanvien layThongTinNhanvien(String tendn) {
+        Nhanvien nv = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        
+        try {
+            String sql="FROM Nhanvien WHERE tendn = :tendn";
+            Query query = session.createQuery(sql);
+            query.setParameter("tendn" ,tendn);
+            List<Nhanvien> ds = query.list();
+            if(!ds.isEmpty())
+                nv=ds.get(0);
+        } catch (HibernateException ex) {
+            System.err.println(ex);
+            nv = null;
+        } finally {
+            session.close();
+        }
+        return nv;
     }
 }

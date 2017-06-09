@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"   
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                           http://www.springframework.org/schema/security 
+                            http://www.springframework.org/schema/security/spring-security-3.1.xsd
+">
+    <security:http auto-config="true">
+<!--         
+        <security:intercept-url pattern="/index.htm" access="ROLE_USER,ROLE_ADMIN" />-->
+         
+        <security:intercept-url pattern="/viewPerInfo.htm" access="ROLE_USER" />
+        <security:intercept-url pattern="/viewProducts.htm" access="ROLE_USER" />
+        
+        <security:intercept-url pattern="/products.htm" access="ROLE_ADMIN" />
+        <security:intercept-url pattern="/addProduct.htm" access="ROLE_ADMIN" />
+        <security:intercept-url pattern="/editProduct.htm" access="ROLE_ADMIN" />
+        
+        <security:access-denied-handler error-page='/loginError.htm' />
+ 
+        <security:form-login login-page='/login.htm' login-processing-url="/j_spring_security_check"
+            authentication-failure-url='/loginError.htm' username-parameter="username"
+            password-parameter="password" />
+ 
+        <security:logout logout-url="/logout.htm" logout-success-url="/index.htm"
+            delete-cookies="JSESSIONID" invalidate-session="true" />
+        
+    </security:http>
+ 
+    <security:authentication-manager>
+<!--        <security:authentication-provider>
+            <security:user-service>
+                <security:user name="NVB" password="123456" authorities="ROLE_USER" />
+                <security:user name="NVA" password="123456" authorities="ROLE_ADMIN" />
+            </security:user-service>
+        </security:authentication-provider>-->
+        <!-- authentication from database -->
+        <security:authentication-provider>
+            <security:jdbc-user-service data-source-ref="myDataSource"
+                users-by-username-query="select tendn,matkhau,idnhanvien from nhanvien where tendn=?"
+                authorities-by-username-query="Select tendn, concat('ROLE_',role) role from nhanvien where tendn=?" />
+        </security:authentication-provider>
+    </security:authentication-manager>
+</beans>

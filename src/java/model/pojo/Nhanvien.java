@@ -1,5 +1,5 @@
 package model.pojo;
-// Generated Jun 4, 2017 8:03:44 AM by Hibernate Tools 4.3.1
+// Generated Jun 6, 2017 11:15:00 PM by Hibernate Tools 4.3.1
 
 
 
@@ -11,21 +11,18 @@ public class Nhanvien  implements java.io.Serializable {
 
      private Integer idnhanvien;
      private String hoten;
-     private String tendangnhap;
+     private String tendn;
      private String matkhau;
+     private String role;
 
     public Nhanvien() {
     }
 
-	
-    public Nhanvien(String tendangnhap, String matkhau) {
-        this.tendangnhap = tendangnhap;
-        this.matkhau = matkhau;
-    }
-    public Nhanvien(String hoten, String tendangnhap, String matkhau) {
+    public Nhanvien(String hoten, String tendn, String matkhau, String role) {
        this.hoten = hoten;
-       this.tendangnhap = tendangnhap;
+       this.tendn = tendn;
        this.matkhau = matkhau;
+       this.role = role;
     }
    
     public Integer getIdnhanvien() {
@@ -42,12 +39,12 @@ public class Nhanvien  implements java.io.Serializable {
     public void setHoten(String hoten) {
         this.hoten = hoten;
     }
-    public String getTendangnhap() {
-        return this.tendangnhap;
+    public String getTendn() {
+        return this.tendn;
     }
     
-    public void setTendangnhap(String tendangnhap) {
-        this.tendangnhap = tendangnhap;
+    public void setTendn(String tendn) {
+        this.tendn = tendn;
     }
     public String getMatkhau() {
         return this.matkhau;
@@ -55,6 +52,13 @@ public class Nhanvien  implements java.io.Serializable {
     
     public void setMatkhau(String matkhau) {
         this.matkhau = matkhau;
+    }
+    public String getRole() {
+        return this.role;
+    }
+    
+    public void setRole(String role) {
+        this.role = role;
     }
 
 

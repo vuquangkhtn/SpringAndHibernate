@@ -41,7 +41,6 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="qlsanpham"/>
-  <table-filter match-name="nhanvien"/>
   <table-filter match-name="sanpham"/>
-  <table-filter match-name="quanly"/>
+  <table-filter match-name="nhanvien"/>
 </hibernate-reverse-engineering>

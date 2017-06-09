@@ -30,12 +30,18 @@ public class ThemSanPhamController extends SimpleFormController {
     @Override
     protected ModelAndView onSubmit(Object command) throws Exception {
         Sanpham sp = (Sanpham) command;
-        if(new SanphamDAO().themSanpham(sp)) {
-            
-            return new ModelAndView(new RedirectView("sanphams.htm"));
+        try{
+            if(sp.getTenSp()!= null
+                    && sp.getGia() != null
+                    && sp.getSoLuong() != null
+                    && sp.getMieuTa() != null)
+            new SanphamDAO().themSanpham(sp);
         }
-        else {
-            return null;
+        catch(Exception e) {
+            
+        }
+        finally {
+            return new ModelAndView(new RedirectView("sanphams.htm"));
         }
     }
 

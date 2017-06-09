@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Jun 4, 2017 8:03:45 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Jun 6, 2017 11:15:01 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="model.pojo.Nhanvien" table="nhanvien" catalog="qlsanpham" optimistic-lock="version">
         <id name="idnhanvien" type="java.lang.Integer">
@@ -9,13 +9,16 @@
             <generator class="identity" />
         </id>
         <property name="hoten" type="string">
-            <column name="hoten" length="100" />
+            <column name="hoten" length="128" />
         </property>
-        <property name="tendangnhap" type="string">
-            <column name="tendangnhap" length="45" not-null="true" unique="true" />
+        <property name="tendn" type="string">
+            <column name="tendn" length="100" />
         </property>
         <property name="matkhau" type="string">
-            <column name="matkhau" length="45" not-null="true" />
+            <column name="matkhau" length="100" />
+        </property>
+        <property name="role" type="string">
+            <column name="role" length="20" />
         </property>
     </class>
 </hibernate-mapping>
